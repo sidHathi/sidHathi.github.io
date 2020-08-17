@@ -322,6 +322,11 @@ h1.light
 {
     margin:0 !important;
 }
+.noMarginVert
+{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
 .noPadding
 {
     padding:0;
