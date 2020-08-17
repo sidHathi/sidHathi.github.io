@@ -227,9 +227,9 @@ h1.light
     {
         font-size: 5rem;
     }
-    h1.subHeader
+    .subHeader
     {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 }
 @media screen and (max-width: 1024px)
@@ -242,9 +242,9 @@ h1.light
     {
         font-size: 2.4rem;
     }
-    h1.subHeader
+    .subHeader
     {
-        font-size: 2.2rem;
+        font-size: 2.0rem;
     }
     .sectionHeader
     {
@@ -271,7 +271,7 @@ h1.light
     {
         font-size: 2.0rem;
     }
-    h1.subHeader
+    .subHeader
     {
         font-size: 1.4rem;
     }
@@ -296,7 +296,14 @@ h1.light
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 92.5%
+        width: 87.5%
+    }
+    .halfJustify
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%
     }
 }
 .sectionTop
@@ -309,7 +316,7 @@ h1.light
 }
 .noMargin
 {
-    margin:0;
+    margin:0 !important;
 }
 .noPadding
 {
@@ -318,7 +325,7 @@ h1.light
 .neuCard
 {
     display: block;
-    width: 87.5%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
@@ -337,8 +344,26 @@ h1.light
 {
     display: none;
 }
+.contactPadding
+{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.promoBanner
+{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 @media screen and (max-width: 767px)
 {
+    .sectionTop
+    {
+        padding-top: 80px;
+    }
+    .sectionBottom
+    {
+        padding-bottom: 80px;
+    }
     .mobilePadding
     {
         padding-top: 40px;
@@ -358,7 +383,7 @@ h1.light
         padding-left: 0;
         padding-right: 0;
         display: block;
-        width: 85%;
+        width: 87.5%;
         margin-right: auto;
         margin-left: auto;
     }
@@ -373,6 +398,17 @@ h1.light
         background-color: #f9f9f9;
         border-radius: 0;
         box-shadow: none
+    }
+    .contactPadding
+    {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .promoBanner
+    {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 }
 .phone
