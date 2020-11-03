@@ -1,3 +1,2 @@
-# sidHathi.github.io
-Resume website
+# Personal Website
 Check it out by visiting https://sidhathi.com
