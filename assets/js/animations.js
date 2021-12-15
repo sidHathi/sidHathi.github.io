@@ -60,11 +60,19 @@ function openExposeWeb() {
     const exposeWebCard = document.getElementById('exposeWebCard');
     const exposeWebContent = document.getElementById('exposeWebContent');
 
-    var tl = gsap.timeline();
-    tl.to('.exposeWebTemp', {duration: 0.3, height: 0, opacity: 0})
-    .to(exposeWebCard, {duration: 0.3, height:'1000px'})
-    .to(exposeWebContent, {duration: 0.3, 'margin-top':'20px', opacity: 1, height: 'max-content', padding: '40px'})
-    .to('.exposeCardWeb', {duration: 0.3, 'background-position-y':'750px'}, "-=0.3")
+    if (screen.width > 800) {
+        var tl = gsap.timeline();
+        tl.to('.exposeWebTemp', {duration: 0.3, height: 0, opacity: 0})
+        .to(exposeWebCard, {duration: 0.3, height:'1000px'})
+        .to(exposeWebContent, {duration: 0.3, 'margin-top':'20px', opacity: 1, height: 'max-content', padding: '40px'})
+        .to('.exposeCardWeb', {duration: 0.3, 'background-position-y':'600px'}, "-=0.3")
+    } else {
+        var tl = gsap.timeline();
+        tl.to('.exposeWebTemp', {duration: 0.3, height: 0, opacity: 0})
+        .to(exposeWebCard, {duration: 0.3, height:'1000px'})
+        .to(exposeWebContent, {duration: 0.3, 'margin-top':'20px', opacity: 1, height: 'max-content', padding: '40px'})
+        .to('.exposeCardWeb', {duration: 0.3, 'background-position-y':'750px'}, "-=0.3")
+    }
 }
 
 function closeExposeWeb() {
