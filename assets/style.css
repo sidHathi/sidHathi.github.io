@@ -1,41 +1,655 @@
-@font-face
-{
-  font-family: helveticaBold;
-  src: url(HelveticaNeueBd.ttf);
-}
-@font-face
-{
-  font-family: helveticaMed;
-  src: url(HelveticaNeueMed.ttf);
-}
-@font-face
-{
-  font-family: helveticaNeue;
-  src: url(HelveticaNeueLt.ttf);
-}
-@font-face
-{
-  font-family: helveticaNeueThin;
-  src: url(HelveticaNeueThin.ttf);
+@font-face {
+    font-family: AHBold;
+    src: url(AtkinsonHyperlegible-Bold.ttf);
 }
 
-body
-{
-    overflow-x: hidden;
+@font-face {
+    font-family: AHRegular;
+    src: url(AtkinsonHyperlegible-Regular.ttf);
 }
-section
-{
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translate(-50%, -30px);
+		-ms-transform:     translate(-50%, -30px);
+		transform:         translate(-50%, -30px)
+	}
+	40% {
+		-webkit-transform: translate(-50%, -60px);
+		-ms-transform:     translateY(-50%, -60px);
+		transform:         translateY(-50%, -60px)
+	}
+	60% {
+		-webkit-transform: translateY(-50%, -60px);
+		-ms-transform:     translateY(-50%, -60px);
+		transform:         translateY(-50%, -60px)
+	}
+}
+
+body {
+    overflow-x : hidden;
+    background-color: #121212;
+    font-family: AHRegular;
+    color: white;
+}
+
+section {
+    overflow-x: hidden;
+    margin-bottom: 40px;
+}
+
+section#landing {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 200px;
+    font-family: AHBold;
+}
+
+h1.hero {
+    padding-top: 128px;
+    line-height: 72px;
+}
+
+h1 strong {
+    font-size: 200px;
+    font-family: AHBold;
+    color: #4D84FF
+}
+
+h1 strong.weak {
+    font-size: 72px;
+    color:white;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 100px;
+    }
+    h1.hero {
+        line-height: 28px;
+    }
+    h1 strong.weak {
+        font-size: 48px;
+    }
+    div.heroText {
+        max-width: 87.5%;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+h2 {
+    font-size: 48px;
+    font-family: AHBold;
+}
+
+h2 strong {
+    font-size: 128px;
+    font-family: AHBold;
+    color: #4D84FF;
+    line-height: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 36px;
+    }
+    h2 strong {
+        font-size: 100px;
+    }
+}
+
+h3 {
+    font-size:24px;
+    font-family: AHBold;
+    padding-bottom: 8px;
+    box-shadow: 0 12px 0 -10px #4D84FF;
+    width: max-content;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 16px
+    }
+}
+
+a {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    text-decoration: none;
+    padding-bottom: 8px;
+    box-shadow: 0 20px 0 -16px #4D84FF;
+}
+
+@media screen and (max-width: 800px) {
+    a {
+        font-size: 20px;
+        padding-bottom: 6px;
+        box-shadow: 0 14px 0 -10px #4D84FF;
+    }
+}
+
+a:hover {
+    color:white;
+    font-style: italic;
+    box-shadow: 0 24px 0 -17px #4D84FF;
+}
+
+a.navbar-brand {
+    font-family: AHBold;
+    text-transform: none;
+    box-shadow: none;
+    padding-left: 10vw;
+}
+
+a.navbar-brand strong {
+    font-size: 48px;
+    color:#4D84FF;
+    line-height: 20px;
+}
+
+a:hover.navbar-brand {
+    color:lightgray;
+    font-style: normal;
+}
+
+a.scroll {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -30px);
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    box-shadow: none;
+    animation-delay: 3s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-timing-function: ease-in-out;
+    z-index:10;
+}
+
+a:hover.scroll {
+    box-shadow: 0 24px 0 -20px #4D84FF;
+}
+
+p {
+    font-size:16px;
+}
+
+p a {
+    font-size: 16px;
+    box-shadow: none;
+    padding:none;
+    text-transform: none;
+    color: #4D84FF;
+}
+
+p.muted {
+    color: #9e9e9e
+}
+
+p.footer a {
+    color: #FAFAFAFA
+}
+
+img.inlineImage {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landingBG {
+    background-image: url(mask-1.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+    .landingBG {
+        background-image: url(mask-1-mobile.jpg);
+    }
+}
+
+.landingContent {
+    width: 100%;
+    height: 100vh;
+    padding-top: 20vh;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
-nav.bg-dark
-{
-    background-color: #1a1a1a !important;
-    opacity: 95%;
+.darken {
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
 }
-.navbar-brand
+
+.scrollContainer {
+    height: 35vh;
+}
+
+.textBlock {
+    padding-top: 80px;
+    max-width:700px;
+    padding-bottom: 30px;
+}
+
+.skillCard {
+    background-color: #212121;
+    border-radius: 20px;
+    width:100%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.exposeCard {
+    border-radius: 20px;
+    width: 100%;
+    height: 500px;
+    overflow:hidden;
+    background-image: linear-gradient(#212121, #4D84FF 200%);
+}
+
+.exposeCard.open {
+    height: 240px;
+}
+.exposeCard.open p {
+    opacity: 0;
+}
+.exposeCard.open a {
+    opacity: 0;
+}
+
+.gradientOverlay {
+    padding: 5vw;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #0B0014, rgba(77, 132, 255, 0.25));
+}
+
+@media screen and (max-width: 800px) {
+    .exposeCard {
+        height: max-content;
+    }
+    .exposeCard .gradientOverlay {
+        padding-top: 40px;
+        padding-bottom: 200px;
+    }
+    .exposeCard.open {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        height: auto;
+    }
+}
+
+.graphics {
+    background-image: url(GP1.5-22.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.exposeCardContent {
+    width:100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5vw;
+}
+
+.exposeCardApp {
+    background-image: url(GPHome.png);
+    background-position-y: 300px;
+}
+
+.exposeCardWeb {
+    background-image: url(gpSiteT.png);
+    background-position-y: 340px;
+    background-position-x: center;
+    background-size: 120%;
+}
+
+.tall {
+    height: 800px
+}
+
+.projectCardLarge {
+    padding:5vw;
+    width: 100%;
+    border-radius: 20px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    overflow:hidden;
+}
+
+.realBG {
+    background-image: url(realAppT.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 325px;
+}
+
+.codeBG {
+    background-image: url(cs50code.png);
+    padding: 0;
+}
+
+.vrBG {
+    background-image: url(SeeingIsBelievingHero.png);
+}
+
+.gradientBluePurple {
+    background-image: linear-gradient(#4D0088, #4D84FF 150%);
+    padding:0;
+}
+
+.gradientGreyBlue {
+    overflow:hidden;
+    background-image: linear-gradient(#212121, #4D84FF 200%);
+}
+
+.gradientGreyPurple {
+    background-image: linear-gradient(#212121, #0B0014);
+}
+
+.overlayCard {
+    background-color: #212121;
+    border-radius: 20px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 
+      12px 12px 24px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.overlayCard.secondary {
+    box-shadow: none;
+    border: 2px solid whitesmoke;
+    background: none;
+}
+
+.lakesideBG {
+    padding:5vw;
+    background-image: url(lakesideSiteT.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 10vh;
+    background-position-x: 33vw;
+}
+
+.restaurantBG {
+    background-image: url(restaurantStock2.jpeg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding : 0;
+}
+
+.contentDarken {
+    padding: 5vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(foodWasteApp2.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-x: 40vw;
+}
+
+.aboutImage
 {
-    font-family: helveticaNeueThin;
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 
+      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.break {
+    margin-top: 200px;
+}
+
+.contentCard {
+    background-color: #212121;
+    border-radius: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .textBlock {
+        width: 87.5%;
+        display: block;
+        margin: auto;
+    }
+    .gradientOverlay {
+        padding: 30px;
+    }
+    .exposeCardContent {
+        padding: 30px;
+        padding-bottom: 300px;
+    }
+    .exposeCardApp {
+        background-position-y: 200px;
+        background-size: contain;
+    }
+    .exposeCardWeb {
+        background-position-y: 300px;
+        background-size: contain;
+    }
+    .tall {
+        height: auto;
+    }
+
+    .gradientBluePurple {
+        background-image: linear-gradient(#4D0088, #4D84FF 150%);
+        padding:0;
+        min-height: 100%;
+    }
+
+    .gradientGreyBlue {
+        overflow:hidden;
+        background-image: linear-gradient(#212121, #4D84FF 200%);
+        background-size: max;
+    }
+
+    .gradientGreyPurple {
+        background-image: linear-gradient(#212121, #0B0014);
+    }
+
+    .projectCardLarge {
+        padding: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: max-content;
+        min-height: 100%;
+        width: 95%;
+        display: block;
+        margin: auto;
+    }
+
+    .realBG {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height:200px;
+    }
+
+    .vrBG {
+        background-image: url(SeeingIsBelievingHero.png);
+        background-position-y: -300px;
+    }
+
+    .overlayCard {
+        margin-top: 300px;
+        background-color: #212121;
+        border-radius: 0;
+        width: 100%;
+        padding: 6vw;
+        box-shadow: none
+    }
+
+    .overlayCard.secondary {
+        box-shadow: none;
+        border: none;
+        background: none;
+    }
+
+    .lakesideBG {
+        padding:0;
+        background-image: url(lakesideSiteT.png);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position-y:100px;
+    }
+
+    .restaurantBG {
+        background-image: url(restaurantStock2.jpeg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding : 0;
+    }
+
+    .contentDarken {
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-image: url(foodWasteApp2.png);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: top;
+    }
+
+    .aboutImage
+    {
+        width: 90%;
+        border-radius: 20px;
+        box-shadow: 
+        12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+        -8px -8px 12px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .break {
+        margin-top: 100px;
+    }
+    .aboutText {
+        width: 87.5%;
+        display: block;
+        margin: auto;
+    }
+
+}
+
+
+.exposeGraphicsContent {
+    display: block;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    height:0;
+    opacity:0;
+    overflow:hidden;
+}
+
+.closeButton {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.exposeAppContent {
+    width: 100%;
+    padding: 0;
+    background-color: #212121;
+    border-radius: 20px;
+    height: 0;
+    opacity: 0;
+}
+
+.exposeWebContent {
+    width: 100%;
+    padding: 0;
+    background-color: #212121;
+    border-radius: 20px;
+    height: 0;
+    opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .exposeGraphicsContent {
+        width : 87.5%;
+        display: block;
+        margin:auto;
+    }
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.photo
+{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 
+      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 12px 0 rgba(0, 0, 0, 0.3); 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
 }
 
 
@@ -113,451 +727,35 @@ nav.bg-dark
     }
   }
 
-h1
-{
-    font-family: helveticaMed;
-}
-h2
-{
-    font-family: helveticaMed;
-}
-h1.bold
-{
-    font-family: helveticaBold;
-}
-p.bold
-{
-    font-family: helveticaMed;
-}
-h1 a
-{
-    font-family: helveticaBold;
-    color: white
-}
-h1 a:hover
-{
-    font-family: helveticaBold;
-    color: white;
-    font-style: italic;
-    text-decoration: none;
-}
-h1.light
-{
-    font-family: helveticaNeueThin;
-}
-
-
-/* The animation code */
-@keyframes animation {
-    from {background-color: rgba(0,0,0,0.1);}
-    to {background-color: rgba(0,0,0,0.3);}
-}
-/* The animation code */
-@keyframes textAnimation {
-    from {opacity: 0.0;}
-    to {opacity: 1;}
-}
-.darken
-{
-  background-color: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 100%;
-}
-.primaryDarken
-{
-  background-color: rgba(0,0,0,0.3);
-  width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 768px)
-{
-    .primaryDarken
-    {
-        background-color: rgba(0,0,0,0.3);
-        width: 100%;
-        height: 100%;
-        animation-name: animation;
-        animation-duration: 5s;
-    }
-}
-.primaryBanner
-{
-  background-image: url(mask-1.jpg); 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
-}
-.banner-content
-{
-    padding-top: 30vh;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-}
-.animateText
-{
-    animation-name: textAnimation;
-    animation-duration: 5s;
-    opacity: 1;
-}
-.engineeringBG
-{
-  background-image: url(softwareEngineeringStock2.jpg); 
-}
-.photoBG
-{
-  background-image: url(abstract1.jpg); 
-}
-.foodBG
-{
-  background-image: url(restaurantStock2.jpeg); 
-}
-.sectionHeader
-{
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 500px;
-}
-.sectionHeaderContent
-{
-    padding-top: 250px
-}
-.white
-{
-    color: white;
-}
-.alignBottom
-{
-    padding-top: 40vh;
-}
-@media screen and (min-aspect-ratio: 16/9)
-{
-    .alignBottom
-    {
-        padding-top: 35vh;
-    }
-}
-.aboutImage
-{
-    width: 90%;
-    border-radius: 20px;
-    box-shadow: 
-      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-      -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-}
-@media screen and (max-width: 1440px)
-{
-    h1.header
-    {
-        font-size: 5rem;
-    }
-    .subHeader
-    {
-        font-size: 2.2rem;
-    }
-}
-@media screen and (max-width: 1024px)
-{
-    h1.name
-    {
-        font-size: 2rem;
-    }
-    h1.header
-    {
-        font-size: 2.4rem;
-    }
-    .subHeader
-    {
-        font-size: 2.0rem;
-    }
-    .sectionHeader
-    {
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      height: 200px;
-    }
-    .sectionHeaderContent
-    {
-        padding-top: 100px
-    }
-}
-@media screen and (max-width: 768px)
-{
-    h1.name
-    {
-        font-size: 1.6rem;
-    }
-    h1.header
-    {
-        font-size: 2.0rem;
-    }
-    .subHeader
-    {
-        font-size: 1.6rem;
-    }
-    .primaryBanner
-    {
-    background-image: url(mask-1-mobile.jpg); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    }
-    .aboutImage
-    {
-       margin-bottom: 40px;
-       margin-left: 5%;
-    }
-    .justifyMobile
-    {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 87.5%
-    }
-    .halfJustify
-    {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%
-    }
-}
-.sectionTop
-{
-    padding-top: 120px;
-}
-.sectionBottom
-{
-    padding-bottom: 120px;
-}
-.noMargin
-{
-    margin:0 !important;
-}
-.noMarginVert
-{
-    margin-top:0 !important;
-    margin-bottom:0 !important;
-}
-.noPadding
-{
-    padding:0;
-}
-.neuCard
-{
-    display: block;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;;
-    background-color: #f9f9f9;
-    border-radius: 20px;
-    box-shadow: 
-      12px 12px 24px 0 rgba(0, 0, 0, 0.25),
-      -8px -8px 20px 0 rgba(255, 255, 255, 0.3);
-}
-.cardContent
-{
-    padding: 100px;
-}
-.onlyMobile
-{
-    display: none;
-}
-.contactPadding
-{
-    padding-top: 100px;
-    padding-bottom: 120px;
-}
-.promoBanner
-{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-@media screen and (max-width: 767px)
-{
-    .sectionTop
-    {
-        padding-top: 80px;
-    }
-    .sectionBottom
-    {
-        padding-bottom: 80px;
-    }
-    .mobilePadding
-    {
-        padding-top: 40px;
-    }
-    .noMobile
-    {
-        display: none;
-    }
-    .onlyMobile
-    {
-        display: block;
-    }
-    .cardContent
-    {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        padding-left: 0;
-        padding-right: 0;
-        display: block;
-        width: 87.5%;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .neuCard
-    {
-        display: block;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: #f9f9f9;
-        border-radius: 0;
-        box-shadow: none
-    }
-    .contactPadding
-    {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    .promoBanner
-    {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-}
-.phone
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 85%;
-}
-.mac
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-.photo
-{
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 
-      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-      -8px -8px 12px 0 rgba(255, 255, 255, 0.3); 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-}
-.photo :hover
-{
-    box-shadow: none;
-}
-img.photo:hover
-{
-    box-shadow: none;
-    opacity: 80%;
-}
-#video
-{
-    width: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-#bigIcon
-{
-    text-align: center;
-    font-size: 250px;
-    color:black;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-@media screen and (min-width: 800px)
-{
-    .centerVertically
-    {
-    margin: 0;
-    position: absolute;
-    top: 30%;
-    -ms-transform: translateY(-30%);
-    transform: translateY(-30%);
-    }
-}
-.textBlock
-{
-    width: 640px;
-}
-@media screen and (max-width: 768px)
-{
-    .textBlock
-    {
-        width: 100%
-    }
-    #bigIcon
-    {
-        text-align: center;
-        font-size: 200px;
-        color:black;
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        padding-bottom: 40px;
-    }
-}
 
 input[type="text"]
 {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     border: none;
     width: 100%;
     border-radius: 20px;
     padding: 8px;
     padding-left: 20px;
+    color:whitesmoke;
 }
 input[type="text"]:focus
 {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
     border: none;
     outline: none;
 }
 textarea
 {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     border: none;
     width: 100%;
     padding: 20px;
     border-radius: 20px;
+    color:whitesmoke;
 }
 textarea:focus
 {
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: none;
     outline: none;
 }
@@ -569,36 +767,53 @@ button[type="submit"]
     background-color: black;
     border-radius: 20px;
     font-size: 1rem;
-    font-family: helveticaMed;
     width: 400px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
 }
-@media screen and (max-width: 768px)
+
+.contactCard {
+    background-color: #212121;
+    border-radius: 20px;
+    padding: 100px;
+}
+
+@media screen and (max-width: 800px)
 {
     button[type="submit"]
     {
         width: 90%;
     }
+
+    .contactCard {
+        background-color: #212121;
+        border-radius: 20px;
+        padding: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        width: 95%;
+        display: block;
+        margin: auto;
+    }
 }
+
 .footer
 {
-    background-color: #1a1a1a;
+    background-color: black;
     width: 100%;
     padding-top: 100px;
     padding-bottom: 80px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
-h6
-{
-    font-family: helveticaMed;
+
+#footer {
+    margin-top: 200px;
+    margin-bottom: 0px !important;
 }
-h6 a
-{
-    color: inherit;
-}
-h6 a:hover
-{
-    color: inherit;
+
+nav.navbar.navbar-dark.bg-dark {
+    background-color: rgba(0, 0, 0, 0.8) !important;
 }
